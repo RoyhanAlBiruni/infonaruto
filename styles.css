@@ -1,0 +1,443 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background: linear-gradient(135deg, #fffdfd, #ffcc00); /* Warna oranye seperti Naruto */
+    color: white;
+    padding: 20px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+}
+
+.logo {
+    height: 80px;
+    width: auto;
+    margin-right: 20px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 30px;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 400;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #1a73e8; /* Warna biru saat hover */
+    transform: translateY(-2px);
+}
+
+nav ul li::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: #ffcc00;
+    left: 0;
+    bottom: -5px;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+nav ul li:hover::after {
+    transform: scaleX(1);
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    text-align: center;
+    height: 400px;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('narutobg.jpg'); /* Pastikan ini adalah jalur yang benar */
+    background-size: cover;
+    background-position: center;
+    animation: moveBackground 10s linear infinite;
+    z-index: -1;
+}
+
+@keyframes moveBackground {
+    0% { transform: translateY(0); }
+    25% { transform: translateY(-10px); }
+    50% { transform: translateY(-20px); }
+    75% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+nav ul li a:hover {
+    color: #1a73e8;
+    transform: translateY(-2px);
+    animation: bounce 0.4s ease;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-5px);
+    }
+    60% {
+        transform: translateY(-2px);
+    }
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-content h2 {
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    margin-bottom: 10px;
+}
+
+.hero-content a {
+    display: inline-block;
+}
+
+/* Button Styles */
+.btn {
+    background-color: #ffcc00;
+    color: #333;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #ff4500;
+    transform: scale(1.05);
+}
+
+/* Main Layout */
+.main-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    margin: 40px 5%;
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.category-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.category-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.category-card h3 {
+    margin-top: 0;
+    color: #ff4500;
+}
+
+.category-card p {
+    color: #555;
+}
+
+/* Category Image Styling */
+.category-image {
+    width: 100%;
+    height: 200px; /* Menentukan tinggi tetap */
+    object-fit: cover; /* Agar gambar dipotong secara proporsional dan tetap rapi */
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.category-card:hover .category-image {
+    transform: scale(1.05);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .hero-content h2 {
+        font-size: 1.8rem;
+    }
+}
+.category-card:hover {
+    background-color: #f9f9f9; /* Warna latar belakang saat hover */
+    border-left: 5px solid #ff4500; /* Garis di sebelah kiri */
+}
+@keyframes slideIn {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.category-card {
+    animation: slideIn 0.5s ease forwards; /* Menambahkan animasi pada kartu */
+}
+.category-card h3 {
+    transition: color 0.3s ease;
+}
+
+.category-card:hover h3 {
+    color: #ffcc00; /* Warna baru saat hover */
+}
+footer {
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px 0;
+}
+.hero-section {
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+.btn {
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #ff4500;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Tambah bayangan saat hover */
+}
+.category-card:hover .category-image {
+    filter: blur(2px); /* Efek blur saat hover */
+    transform: scale(1.05);
+}
+.category-card img {
+    width: 100%; /* Agar gambar mengikuti lebar kontainer */
+    height: auto; /* Tinggi mengikuti rasio asli */
+    max-height: 200px; /* Membatasi tinggi maksimum gambar */
+    object-fit: cover; /* Memastikan gambar terpotong dengan rapi */
+    border-radius: 10px; /* Sudut melengkung untuk gambar */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Bayangan untuk efek kedalaman */
+}
+nav ul li a:hover {
+    color: #1a73e8;
+    transform: translateY(-2px);
+    animation: bounce 0.4s ease;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-5px);
+    }
+    60% {
+        transform: translateY(-2px);
+    }
+}
+.hero-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('narutobg.jpg');
+    background-size: cover;
+    background-attachment: fixed; /* Efek parallax */
+    background-position: center;
+    z-index: -1;
+    transform: translateY(0);
+    transition: transform 0.6s ease-in-out;
+}
+
+.hero-section:hover::before {
+    transform: translateY(-10px);
+}
+.btn {
+    background-color: #ffcc00;
+    color: #333;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #ff4500;
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Tambah bayangan yang lebih dalam */
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 69, 0, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(255, 69, 0, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 69, 0, 0);
+    }
+}
+/* Character Card Styling Enhancement */
+.character-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    text-align: center;
+    max-width: 300px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.character-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 204, 0, 0.1); /* Warna kuning transparan */
+    z-index: -1;
+    transform: scale(0.8);
+    transition: transform 0.5s ease-in-out;
+}
+
+.character-card:hover::before {
+    transform: scale(1.2);
+}
+
+.character-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    background-color: #f9f9f9; /* Warna latar belakang saat hover */
+}
+
+.character-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.character-card:hover .character-image {
+    transform: scale(1.05);
+    filter: brightness(1.1); /* Menambah kecerahan saat hover */
+}
+
+.character-name {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #333;
+    margin: 10px 0 5px;
+    transition: color 0.3s ease;
+}
+
+.character-card:hover .character-name {
+    color: #ff4500; /* Warna baru saat hover */
+}
+
+.character-info {
+    color: #777;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    transition: color 0.3s ease;
+}
+
+.character-card:hover .character-info {
+    color: #555; /* Sedikit lebih gelap saat hover */
+}
+
+/* Tambahan animasi masuk */
+@keyframes slideIn {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.character-card {
+    animation: slideIn 0.5s ease forwards;
+}
+
+/* Card Shadow Pulse */
+@keyframes pulseShadow {
+    0% {
+        box-shadow: 0 0 0 rgba(0, 0, 0, 0.1);
+    }
+    50% {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+    100% {
+        box-shadow: 0 0 0 rgba(0, 0, 0, 0.1);
+    }
+}
+
+.character-card:hover {
+    animation: pulseShadow 0.6s infinite alternate;
+}
+/* Tambahan efek glow dengan posisi dinamis */
+.character-card {
+    --mouse-x: 50%;
+    --mouse-y: 50%;
+    background: radial-gradient(circle at var(--mouse-x) var(--mouse-y), rgba(255, 69, 0, 0.5), transparent 80%);
+    transition: box-shadow 0.4s ease;
+}
+
+.character-card:hover {
+    box-shadow: 0 0 30px rgba(255, 69, 0, 0.5); /* Efek glow tambahan */
+}
