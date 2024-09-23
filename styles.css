@@ -430,14 +430,26 @@ nav ul li a:hover {
 .character-card:hover {
     animation: pulseShadow 0.6s infinite alternate;
 }
-/* Tambahan efek glow dengan posisi dinamis */
-.character-card {
-    --mouse-x: 50%;
-    --mouse-y: 50%;
-    background: radial-gradient(circle at var(--mouse-x) var(--mouse-y), rgba(255, 69, 0, 0.5), transparent 80%);
-    transition: box-shadow 0.4s ease;
-}
+/* Media Queries */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column; /* Susun ulang header */
+        align-items: center; /* Pusatkan item */
+    }
 
-.character-card:hover {
-    box-shadow: 0 0 30px rgba(255, 69, 0, 0.5); /* Efek glow tambahan */
+    .hero-content h2 {
+        font-size: 1.5rem; /* Ukuran font lebih kecil di mobile */
+    }
+
+    .category-grid {
+        grid-template-columns: 1fr; /* Satu kolom untuk tampilan mobile */
+    }
+
+    .btn {
+        padding: 10px 20px; /* Ukuran tombol lebih kecil */
+    }
+
+    .category-image {
+        height: 150px; /* Tinggi gambar lebih kecil */
+    }
 }
