@@ -4,15 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>InfoNaruto</title>
+    <title>Infonaruto</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        .music-player {
+            text-align: center; /* Pusatkan konten */
+            margin: 20px 0; /* Jarak atas dan bawah */
+            padding: 20px; /* Jarak dalam */
+            background: rgba(255, 255, 255, 0.8); /* Latar belakang semi-transparan */
+            border-radius: 10px; /* Sudut membulat */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Bayangan */
+            transition: transform 0.3s; /* Efek transisi */
+        }
+
+        .music-player:hover {
+            transform: scale(1.05); /* Efek zoom saat hover */
+        }
+
+        .music-player h3 {
+            font-family: 'Poppins', sans-serif; /* Font untuk judul */
+            font-weight: 600; /* Berat font */
+            color: #333; /* Warna teks */
+            margin-bottom: 10px; /* Jarak bawah dari judul ke audio */
+        }
+
+        audio {
+            width: 100%; /* Buat audio lebar penuh */
+            border-radius: 5px; /* Sudut membulat */
+            outline: none; /* Hapus outline default */
+        }
+    </style>
 </head>
 <body>
     <header>
         <div class="header-container">
             <a href="index.html">
-                <img src="logo.png" alt="Naruto Pedia Logo" class="logo"> <!-- Ganti ini dengan jalur file logo -->
+                <img src="logo.png" alt="Naruto Pedia Logo" class="logo">
             </a>
             <nav>
                 <ul>
@@ -24,8 +52,14 @@
             </nav>
         </div>
     </header>
-    
 
+    <div class="music-player">
+        <h3>Play Music</h3>
+        <audio controls autoplay loop>
+            <source src="bs.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
 
     <section class="hero-section">
         <div class="hero-content">
@@ -57,7 +91,6 @@
                     <a href="jutsu.html" class="btn">Learn More</a>
                 </div>
             </div>
-            
         </main>
     </div>
 
