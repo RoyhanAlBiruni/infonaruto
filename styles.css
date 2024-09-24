@@ -453,3 +453,29 @@ nav ul li a:hover {
         height: 150px; /* Tinggi gambar lebih kecil */
     }
 }
+.music-player {
+    text-align: center; /* Pusatkan konten */
+    margin: 20px 0; /* Jarak atas dan bawah */
+    padding: 20px; /* Jarak dalam */
+    background: rgba(255, 255, 255, 0.8); /* Latar belakang semi-transparan */
+    border-radius: 10px; /* Sudut membulat */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Bayangan */
+    transition: transform 0.3s; /* Efek transisi */
+}
+
+.music-player:hover {
+    transform: scale(1.05); /* Efek zoom saat hover */
+}
+
+.music-player h3 {
+    font-family: 'Poppins', sans-serif; /* Font untuk judul */
+    font-weight: 600; /* Berat font */
+    color: #333; /* Warna teks */
+    margin-bottom: 10px; /* Jarak bawah dari judul ke audio */
+}
+
+audio {
+    width: 100%; /* Buat audio lebar penuh */
+    border-radius: 5px; /* Sudut membulat */
+    outline: none; /* Hapus outline default */
+}
